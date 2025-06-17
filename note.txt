@@ -1,0 +1,18 @@
+                                                    ПОДГОТОВКА ПРОЕКТА
+composer create-project laravel/laravel blog "8.*"                          install laravel version 8
+composer require laravel/ui                                                 устанавливаем расширение ui (в php artisan появился ui)                                                                         
+php artisan ui bootstrap                                                    install bootstrap
+      ПОДГОТОВКА К ФРОНТУ:
+php artisan ui:auth                                                         require authorisation
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser                         вполняем последовательно,  
+npm install; npm run dev                                                    если нет саксеса то опять     npm run dev
+Теперь вносим все изменения по базе данных в ключ env и проверяем через php artisan migrate. Должно пройти успешно созданием таблиц
+
+2 Урок
+создаем таблицы с моделями с названием в единственном числе         php artisan make:model Post -m 
+создаем связующие таблицы                                           php artisan make:model PostTag -m 
+добавляем атрибуты в таблицах + те, что для связки (им делаем индексацию и форинг ки), и на всяк случай создаем свойства 
+в моделях protected $table='название таблицы' и protected $guarded = false; чтоб давало вносить изменения
+Внимание, категории мы должны создать раньше, чем таблицу пост, иначе пойдет ошибка!!!!!
+
+3 Урок
