@@ -1,3 +1,4 @@
+1 Урок                                               
                                                     ПОДГОТОВКА ПРОЕКТА
 composer create-project laravel/laravel blog "8.*"                          install laravel version 8
 composer require laravel/ui                                                 устанавливаем расширение ui (в php artisan появился ui)                                                                         
@@ -16,3 +17,13 @@ npm install; npm run dev                                                    ес
 Внимание, категории мы должны создать раньше, чем таблицу пост, иначе пойдет ошибка!!!!!
 
 3 Урок
+protected $namespace = 'App\\Http\\Controllers';  раскомментировать в RouteServiceProvider.php
+php artisan make:controller Main/IndexController
+В роутах создали неймспейс и объеденили в группу. Подключили индексконтроллер
+В индексконтроллере прописали инвоук
+Во вьюшке в папке мейн создали вьюшку индекс
+Create layout main. В него вставили код из blog.html и подгрузили папку assets в public
+main class="blog" перенесли в индексвью и сделали подключения
+оборачиваем ссылки main.blade и index.blade в  {{asset('')}} для подключения стилей
+
+4 Урок
