@@ -26,4 +26,11 @@ Create layout main. В него вставили код из blog.html и под
 main class="blog" перенесли в индексвью и сделали подключения
 оборачиваем ссылки main.blade и index.blade в  {{asset('')}} для подключения стилей
 
-4 Урок
+4 Урок Admin LTE
+Прописывааем роут груп для админа и дублируем в админке роуты
+Создаем дирректорию Админ и дублируем туда роут. В роуте в неймспейсе добавляем Admin
+Во вьюшке создаем тоже admin и копируем туда main and layouts. Текст в обоих файлах убиваем
+Текст Index в AdminLTE copy to main.blade.php а папке admin
+content-wrapper переношу в index.blade.php и подключаю, то что унес в мейн
+dist and plugins в AdminLTE copy to public
+в IndexController for admin write: return view('admin.main.index');
