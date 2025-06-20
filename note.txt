@@ -47,3 +47,11 @@ In  view main.blade добавляем ассет для подключения 
 Добавили неймспейс роуту категорий, прописали ссылку в сайдбаре на него
 В вьюшке категорий добавили кнопу
 Создаем маршрут, контроллер и вьюшку с формой для Create
+
+7 Урок 
+Create store route and StoreController
+php artisan make:request Admin/Category/StoreRequest         public function authorize(){return true;} + rules
+Корректируем StoreController 
+create.blade прописываем маршрут, метод и ксрф, в инпуте нейм
+Пробуем создать категорию
+Если у нас форма пустая валидатор не срабатывает. Корректируем в криэйт.блейд форму на видео это 12минут 51 секунда!!!! @error

@@ -27,12 +27,16 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-12">
-          <form action="#" class="w-25">
-          <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Название категории">
-                  </div>
-                  <input type="submit" class="btn btn-primary" value="Добавить">
-         </form>
+          <form action="{{route('admin.category.store')}}" method="POST" class="w-25">
+            @csrf
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Название категории" name="title">
+              @error('title')
+              <div class="text-danger">Это поле необходимо для заполнения</div>
+              @enderror
+            </div>
+            <input type="submit" class="btn btn-primary" value="Добавить">
+          </form>
         </div>
         <!-- ./col -->
       </div>
