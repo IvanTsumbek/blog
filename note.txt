@@ -99,4 +99,8 @@ php artisan make:migration add_column_soft_deletes_to_tags_table
 php artisan migrate
 Тестируем
 
-14 Урок
+14 Lesson Post
+Copy routes, controllers, requests, views for posts and change
+Add link in sidebar
+
+15 Lesson
