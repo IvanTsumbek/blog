@@ -5,17 +5,16 @@ namespace App\Http\Controllers\Admin\Post;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Post\StoreRequest;
 use App\Models\Post;
+use Illuminate\Support\Facades\Storage;
 
 class StoreController extends Controller
 {
     public function __invoke(StoreRequest $request)
     {
         $data = $request->validated();
+        $data['preview_image'] = Storage::put('/images',  $data['preview_image']);    //справа кладем файл, слева переменная с путем
+        $data['main_image'] = Storage::put('/images',  $data['main_image']);
         Post::firstOrCreate($data);
-      
-            // Post::firstOrCreate(                 пример если более одного атрибута, хотя прописали
-            // ['title' => $data['title']],
-            // ['title' => $data['title']]);
 
         return redirect()->route('admin.post.index');
     }

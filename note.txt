@@ -132,4 +132,19 @@ In main.blade.php require this:
 Во вьюшке поле контент оборочиваем в ошибку для обязательного заполнения
 и добавляем хелперы   value="{{old('title')}}"  и     {{old('content')}}
 
-16 Lesson
+16 Lesson Images for posts
+В create.blade вставляем импут для изображений
+В main.blade вставляем    <script src="{{asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js')}}"></script>
+добавляем эту папку в плагины  bs-custom-file-input
+В main.blade вставляем инициализацию
+      $(function () {
+  bsCustomFileInput.init();
+});
+В create.blade в ощую форму добавляем   enctype="multipart/form-data"
+В реквесте стора добавляем рулы для изображений
+С стор контроллере создаем переменные изображений $data['preview_image'] и  $data['main_image']
+ php artisan make:migration add_columns_for_images_to_posts_table
+ Редактируем миграцию. Внимание, когда добавляем в уже имеющуся таблицу атрибуты используем нулебл
+ php artisan migrate потом тестируем добавление
+
+17 Lesson
