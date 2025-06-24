@@ -146,5 +146,20 @@ In main.blade.php require this:
  php artisan make:migration add_columns_for_images_to_posts_table
  Редактируем миграцию. Внимание, когда добавляем в уже имеющуся таблицу атрибуты используем нулебл
  php artisan migrate потом тестируем добавление
+ Забыли поменять browse на три точки при загрузки изображений. Смотри в начале след урока
 
-17 Lesson
+17 Lesson Привязка поста к категории
+Забыли поменять browse на три точки при загрузки изображений
+    <style>
+        .custom-file-input:lang(en)~.custom-file-label::after {
+            content: "...";
+        }
+    </style>
+
+В криэйт контроллере постов создаем переменную категирии и передаем ее во вьюшку
+Во вьюшке создаем список селекта и форичим его
+В реквест в рулы category_id
+Добавляем ошибки валидации для изображений и 
+проверку категорий:  {{$category->id == old('category_id')? 'selected' : ""}}
+
+18 Lesson
