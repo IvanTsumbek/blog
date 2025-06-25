@@ -175,4 +175,6 @@ In rules add  'tag_ids.*' => 'nullable|integer|exists:tags,id',
 В StoreController переделываем код и добавляем транзакцию
 в криэйтблейд делаем валидацию {{is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : ''}}
 
-19 Lesson
+19 Lesson дорабатываем апдейт. Урок слишком сложный, не комментировал
+
+20 Lesson
