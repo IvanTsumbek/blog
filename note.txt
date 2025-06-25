@@ -162,4 +162,17 @@ In main.blade.php require this:
 Добавляем ошибки валидации для изображений и 
 проверку категорий:  {{$category->id == old('category_id')? 'selected' : ""}}
 
-18 Lesson
+18 Lesson Создаем список для тегов
+Добавляем эту папку select2 в плагины
+В main.blade вставляем    <link rel="stylesheet" href="{{asset('plugins/select2/css/select2.min.css')}}">    in head причем в самый верх
+                          <script src="{{asset('plugins/select2/js/select2.full.min.js')}}"></script>        in body
+Добавляем код формы в криэйт блейд
+Подключам в main.blade      $('.select2').select2() обязательно оборачиваем в скрипт
+In CreateConntroller add $tags
+в криэйтблейд форичим и не забываем добавить name="tag_ids[]
+In rules add  'tag_ids.*' => 'nullable|integer|exists:tags,id',
+В модели Post создаем метод tags() для привязки тегов к постам
+В StoreController переделываем код и добавляем транзакцию
+в криэйтблейд делаем валидацию {{is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : ''}}
+
+19 Lesson
