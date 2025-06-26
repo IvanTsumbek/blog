@@ -183,4 +183,12 @@ in migration add methods
 in model use trait
 php artisan migrate
 
-21 Lesson Service 
+21 Lesson Service были проблемы с проверкой изображений 
+Create directory Service in app. Then create PostService.php
+В PostService.php вносим все методы контроллеров. Очень внимательно!!! Там добавляются аргументы в прокидывании и транзакции
+In Admin\Post create BaseController.php
+All controllers in Post change extends BaseController
+Итог: в этом классе прописаны все методы в одном свойстве в контроллере бейз. Поскольку все контроллеры от него наследуются,
+они обращаются напрямую к его свойству а затем к методу.
+
+22 Lesson
