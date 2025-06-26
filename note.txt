@@ -177,4 +177,10 @@ In rules add  'tag_ids.*' => 'nullable|integer|exists:tags,id',
 
 19 Lesson дорабатываем апдейт. Урок слишком сложный, не комментировал
 
-20 Lesson
+20 Lesson SoftDelete for posts
+php artisan make:migration add_soft_deletes_to_posts_table
+in migration add methods
+in model use trait
+php artisan migrate
+
+21 Lesson Service 
