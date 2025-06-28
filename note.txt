@@ -194,3 +194,9 @@ All controllers in Post change extends BaseController
 22 Lesson messages for request
 В реквесты вставляем public function messages и прописываем сообщения валидации
 Прокидываем $message в криэйтблейд
+
+23 Lesson Users
+Копируем категории и создаем для юзер: маршруты, контроллеры, реквесты, вьюшки. Меняем в них информацию
+Добавляем ссылку в сайдбар
+
+24 Lesson
