@@ -200,3 +200,13 @@ All controllers in Post change extends BaseController
 Добавляем ссылку в сайдбар
 
 24 Lesson
+In create.blade and edit.blade add input fields
+In requests add rules and validation
+In store controller add hash
+php artisan make:migration add_soft_deletes_to_users_table
+add information in migration
+php artisan migrate
+Add SoftDelete in model
+Во вьюшках добавить переменную месседж
+
+25 Lesson
