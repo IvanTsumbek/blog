@@ -219,3 +219,10 @@ php artisan make:migration add_column_role_to_users_table и добавляем 
 в эдит блейд добавляем скрытое поле и в реквесте апдейта добавляем правило валидации юзер_айди
 
 26 Lesson Middleware
+php artisan make:middleware AdminMiddleware
+В Kernel.php в  protected $routeMiddleware регистрируем 'admin' => AdminMiddleware::class
+В группу маршрутов добавляем 'middleware' => ['auth','admin']
+Прописываем код в миддлевеар
+В мейнблейде добавляем кнопку выйти
+
+27 Lesson
