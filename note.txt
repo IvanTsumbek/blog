@@ -199,7 +199,7 @@ All controllers in Post change extends BaseController
 Копируем категории и создаем для юзер: маршруты, контроллеры, реквесты, вьюшки. Меняем в них информацию
 Добавляем ссылку в сайдбар
 
-24 Lesson
+24 Lesson SoftDelete
 In create.blade and edit.blade add input fields
 In requests add rules and validation
 In store controller add hash
@@ -209,4 +209,13 @@ php artisan migrate
 Add SoftDelete in model
 Во вьюшках добавить переменную месседж
 
-25 Lesson
+25 Lesson Roles
+php artisan make:migration add_column_role_to_users_table и добавляем инфу
+создаем константы и метод getRoles в модели юзеров
+в криэйт и эдит блейде добавляем селект юзера. Копируем с поста и переделываем
+дорабатываем криэйт и эдитконтроллер юзер
+добавляем в реквест рул для юзера
+в модели в protected $fillable добавляем role
+в эдит блейд добавляем скрытое поле и в реквесте апдейта добавляем правило валидации юзер_айди
+
+26 Lesson Middleware
