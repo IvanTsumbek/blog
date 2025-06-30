@@ -225,4 +225,22 @@ php artisan make:middleware AdminMiddleware
 Прописываем код в миддлевеар
 В мейнблейде добавляем кнопку выйти
 
-27 Lesson
+27 Lesson Автогенерация пароля и имитация отправки сообщения
+https://mailtrap.io/inboxes/3858716/messages отсюда в ключ енв вкладываем всю инфу по MAIL_MAILER
+Пример
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=ea0d1f25908d79
+MAIL_PASSWORD=d7ccb9401fb745
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=example@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+Заново запускаем сервер    php artisan serve
+php artisan make:mail User/PasswordMail -m mail.user.password     второе это блейд шаблон
+В сторконтроллере генерируем пароль и даем команду отправить пароль на почту
+В PasswordMail прокидываем в конструктор пароль чтоб записать в его свойство
+В сторреквесте убираем рулы и валидацию по паролю
+В криэйтблейд юзер убираем поле для пароля, так как при создании мы его теперь генерируем а не вводим
+
+28 Lesson
