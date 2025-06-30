@@ -253,4 +253,17 @@ php artisan make:mail User/PasswordMail -m mail.user.password     второе �
 добавляем хелпер event(new Registered($user));
 Теперь нам приходит 2 письма с паролем и подтверждением авторизации
 
-29 Lesson
+29 Lesson Очереди
+php artisan queue:table
+php artisan migrate
+php artisan make:notification SendVerifyWithQueueNotification вычищаем там весь код и добавляем extends VerifyEmail implements ShouldQueue
+В модель юзер добавляем метод    public function sendEmailVerificationNotification()
+В env ключе меняем QUEUE_CONNECTION=database и APP_URL=http://127.0.0.1:8000/            
+ctrl+C
+php artisan serve когда меняем что-то в ключе env всегда перезапускаем сервер
+Все что мы делали до этого, это создавали очереди и помещали всю реализацию в таблицу jobs
+Теперь приступим к запуску реализации:
+php artisan queue:work   из таблицы пропадет реализация, которая выполнилась
+Заходим в  App\Mail\User\PasswordMail и добавляем  implements ShouldQueue
+
+30 Lesson
