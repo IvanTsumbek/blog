@@ -12,8 +12,9 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard v1</li>
+            <li class="breadcrumb-item"><a href="{{route('admin.main.index')}}">Главная</a></li>
+            <li class="breadcrumb-item active"><a href="{{route('admin.post.index')}}">Посты</a></li>
+            <li class="breadcrumb-item active">{{$post->title}}</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -30,7 +31,7 @@
           <form action="{{route('admin.post.update', $post->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PATCH')
-             <div class="form-group w-25">
+            <div class="form-group w-25">
               <input type="text" class="form-control" placeholder="Название поста" name="title"
                 value="{{$post->title}}">
               @error('title')
@@ -64,7 +65,7 @@
             </div>
             <div class="form-group w-50">
               <label for="exampleInputFile">Добавить главное изображение</label>
-               <div class="w-50 mb-2">
+              <div class="w-50 mb-2">
                 <img src="{{url('storage/'.$post->main_image)}}" alt="main_image" class="w-50">
               </div>
               <div class="input-group">
