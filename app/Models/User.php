@@ -65,4 +65,9 @@ self::ROLE_READER => 'Читатель',
     {
         return $this->belongsToMany(Post::class, 'post_user_likes', 'user_id', 'post_id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class, 'user_id', 'id');
+    }
 }
