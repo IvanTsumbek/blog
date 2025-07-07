@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <script src="{{asset('assets/vendors/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('assets/js/loader.js')}}"></script>
 </head>
+
 <body>
     <div class="edica-loader"></div>
     <header class="edica-header">
@@ -26,13 +28,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('main.index')}}">Блог</a>
                         </li>
+                        <li class="nav-item">
+                            @auth
+                            <a class="nav-link" href="{{route('personal.main.index')}}">Личный кабинет</a>
+                            @endauth
+                            @guest
+                            <a class="nav-link" href="{{route('personal.main.index')}}">Войти</a>
+                            @endguest
+                        </li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
 
-@yield('content')
+    @yield('content')
 
     <section class="edica-footer-banner-section">
         <div class="container">
@@ -116,7 +126,7 @@
         AOS.init({
             duration: 1000
         });
-      </script>
+    </script>
 </body>
 
 </html>
