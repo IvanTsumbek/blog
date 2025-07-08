@@ -360,4 +360,9 @@ php artisan make:model Comment -m и в модели прописываем ст
 То же делаем и с вьюшками. Тут не хватило сил все расписать
 Пишем рилейшн в модели категории
 
-39 Lesson
+39 Lesson Оптимизация запросов Телескоп
+composer require laravel/telescope
+php artisan telescope:install
+php artisan migrate
+В модели пост прописываем protected $with = ['category']; чтоб посты приходили сразу с категориями (получается оптимизация)
+Если нет модели, тогда в чейн нужно добавлять ->with('category')->

@@ -15,6 +15,7 @@ class Post extends Model
     protected $guarded = false;
 
     protected $withCount = ['LikedUser'];
+    protected $with = ['category'];
 
         public function tags()
     {
