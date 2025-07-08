@@ -23,8 +23,18 @@ Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
     Route::get('/{post}', 'ShowController')->name('post.show');
 
     Route::group(['prefix' => '{post}/comments'], function () {
-    Route::post('/', 'Comment\StoreController')->name('post.comment.store');
+        Route::post('/', 'Comment\StoreController')->name('post.comment.store');
+    });
+    Route::group(['prefix' => '{post}/likes'], function () {
+        Route::post('/', 'Like\StoreController')->name('post.like.store');
+    });
 });
+
+Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
+    Route::get('/', 'IndexController')->name('category.index');
+     Route::group(['prefix' => '{category}/posts'], function () {
+        Route::get('/', 'Post\IndexController')->name('category.post.index');
+    });
 });
 
 Route::group(['namespace' => 'Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
